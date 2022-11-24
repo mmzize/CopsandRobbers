@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <script type="text/javascript" src="scripts/increaseOrdecreaseBetAmount.js">  
-      </script>
-      <script type="text/javascript" src="scripts/bet.js">
-      </script>
-      <script type="text/javascript" src="scripts/cashout.js">
-      </script>
-      <script type ="text/javascript" src="scripts/lap.js">
-      </script>
+    <script type="text/javascript" src="scripts/increaseOrdecreaseBetAmount.js">
+    </script>
+    <script type="text/javascript" src="scripts/cashout.js">
+    </script>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="cssStylesAndImages/styles.css">
@@ -38,7 +34,7 @@
     </div>
 
 <div class="buttoncontainer">
-  <input type = "text" id="betamountvalue" class = "lblbetamount" type="number" value="0.00" placeholder="0.00">
+  <input type = "text" id="betamountvalue" class = "lblbetamount" type="number" step ="0.01" value="0.00" placeholder="0.00">
   <button type="button" class="resetbutton" style="color:white" onclick="resetbetamount()">Reset</button>
   <button type="button" class="btn1" style="color: white" onclick="increasebetvaluebyt1()">1</button>
   <button type="button" class="btn2" style="color: white" onclick="increasebetvaluebyt2()">2</button>
@@ -59,6 +55,80 @@
       </div>
   </div>
 </div>
+<script>
+  const playButton = document.getElementsByClassName("play")[0];
+  const second = document.getElementsByClassName("sec")[0];
+  const centiSecond = document.getElementsByClassName("msec")[0];
+  const laps = document.getElementsByClassName("laps")[0];
+  const bg = document.getElementsByClassName("outer-circle")[0];
+  const toggleButton = () => {
+      
+  }
+  const lap = () => {
+      const li = document.createElement("li");
+      const number = document.createElement("span");
+      const timeStamp = document.createElement("span");
+
+      li.setAttribute("class", "lap-item");
+      number.setAttribute("class", "number");
+      timeStamp.setAttribute("class", "time-stamp");
+
+      timeStamp.innerHTML = `${secCounter} : ${centiCounter}`;
+
+      li.append(number, timeStamp);
+      laps.append(li)
+  }
+</script>
+
+<script>
+   var betamount = 0;
+   var totalbetamount = 0;
+   var runningtotal = 50;
+   var decimalPlace=".00";
+
+   let isPlay = false
+   let isReset = false
+
+   let sec;
+   let centiSec;
+
+   let secCounter = 0;
+   let centiCounter = 0;
+
+   function bet() {
+    runningtotal = runningtotal - betamount;
+    document.getElementById("winnings").value = runningtotal;
+    if(runningtotal<betamount){
+      playButton.classList.add("hidden");
+      runningtotal = 0;
+      document.getElementById("winnings").value = runningtotal;
+    }else if(!isPlay && !isReset) {  
+        bg.classList.add("animation-bg");
+          
+        sec = setInterval(() => {
+              second.innerHTML = `${++secCounter}. `;
+          }, 1000);
+
+        centiSec = setInterval(() => {
+              if(centiCounter === 99) {
+                  centiCounter = 0;  
+              }
+              centiSecond.innerHTML = `${++centiCounter}`;
+              let total
+              total = secCounter + (centiCounter/100);
+              totalbetamount= total*betamount;
+              totalbetamount=totalbetamount;
+              var decimal =Math.floor(totalbetamount);
+              playButton.innerHTML = decimal + decimalPlace;
+          
+          }, 180);
+
+          isPlay = false;
+          isReset = true; 
+      } 
+      toggleButton();
+  }
+</script>
 </body>
 
 </html>
