@@ -38,7 +38,7 @@
   <button type="button" class="btn20" style="color: white" onclick="increasebetvaluebyt20()">20</button>
   <button type="button" class="btn100" style="color: white" onclick="increasebetvaluebyt100()">100</button>
   <button type="button" class="btn50" style="color: white" onclick="increasebetvaluebyt50()">50</button>
-  <button type ="button"class="button play" style="color: white" onclick="bet()">BET</button>
+  <button type="button" class="button play" style="color: white" onclick="bet()">BET</button>
   <button type="button" class="Cash" style="color: white" onclick="Cashout()">CASH OUT</button>
   <button type="button" class="Cancel" style="color: white" >CANCEL</button>
 </div>
@@ -74,9 +74,6 @@
       li.append(number, timeStamp);
       laps.append(li)
   }
-  playButton.addEventListener("click", play);
-  resetButton.addEventListener("click", reset);
-  lapButton.addEventListener("click", lap);
 </script>
 
 <script>
@@ -145,7 +142,10 @@
               let total
               total = secCounter + (centiCounter/100);
               totalbetamount= total*betamount;
-              playButton.innerHTML = totalbetamount;        
+              totalbetamount=totalbetamount;
+              var decimal =Math.floor(totalbetamount);
+              playButton.innerHTML = decimal + decimalPlace;
+          
           }, 180);
 
           isPlay = false;
@@ -153,7 +153,6 @@
       } 
       toggleButton();
   }
-
   function Cashout(){
     clearInterval(sec);
     clearInterval(centiSec);
