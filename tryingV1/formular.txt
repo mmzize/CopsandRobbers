@@ -1,4 +1,0 @@
-totalpool = total bets of everyone playing on the website
-cashoutpool = total cashout of everybody playing on the website
-
-if cashoutpool >= totalpool*0.4 then stop game and play exploding animation

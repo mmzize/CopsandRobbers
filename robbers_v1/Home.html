@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type="text/javascript" src="scripts/increaseOrdecreaseBetAmount.js">  
+      </script>
+      <script type="text/javascript" src="scripts/bet.js">
+      </script>
+      <script type="text/javascript" src="scripts/cashout.js">
+      </script>
+      <script type ="text/javascript" src="scripts/lap.js">
+      </script>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="cssStylesAndImages/styles.css">
+     <title>CopsandRobber</title>
+     <Style>
+     </Style>
+   </head>
+<body>
+    <div class="parent">
+      <input type="label" id="winnings" style ="background-color: white; font: bolder; font-family: sans-serif; width: 150px; height: 30px; padding-left: 10px;" placeholder="0.00"></input>
+      <div class="leftmenu"></div>
+    </div>
+      <div class="gamescreen">
+        <div class="sky"></div>
+        <div class="city"></div>
+        <div class="road"></div>
+        <div class="copcar">
+          <img src="cssStylesAndImages/shootingfromcar.gif" class="copcar">
+        </div>
+        <div class="badguys">
+          <img src="cssStylesAndImages/badguys.gif" class="badguys">
+        </div>
+        <div class="explosion">
+          <img src="cssStylesAndImages/explosion.gif" class="explosion">
+        </div>
+		  </div>
+    </div>
+
+<div class="buttoncontainer">
+  <input type = "text" id="betamountvalue" class = "lblbetamount" type="number" value="0.00" placeholder="0.00">
+  <button type="button" class="resetbutton" style="color:white" onclick="resetbetamount()">Reset</button>
+  <button type="button" class="btn1" style="color: white" onclick="increasebetvaluebyt1()">1</button>
+  <button type="button" class="btn2" style="color: white" onclick="increasebetvaluebyt2()">2</button>
+  <button type="button" class="btn10" style="color: white" onclick="increasebetvaluebyt10()">10</button>
+  <button type="button" class="btn20" style="color: white" onclick="increasebetvaluebyt20()">20</button>
+  <button type="button" class="btn100" style="color: white" onclick="increasebetvaluebyt100()">100</button>
+  <button type="button" class="btn50" style="color: white" onclick="increasebetvaluebyt50()">50</button>
+  <button type="button" class="button play" style="color: white" onclick="bet()">BET</button>
+  <button type="button" class="Cash" style="color: white" onclick="Cashout()">CASH OUT</button>
+  <button type="button" class="Cancel" style="color: white" >CANCEL</button>
+</div>
+<div class="container">
+  <div class="watch">
+      <div class="outer-circle">
+      <div class="inner-circle">
+          <span class="text sec">0.</span>
+          <span class="text msec">0</span>
+      </div>
+  </div>
+</div>
+</body>
+
+</html>

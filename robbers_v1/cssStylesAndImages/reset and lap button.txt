@@ -1,0 +1,21 @@
+const lapButton = document.getElementsByClassName("lap")[0];
+  const resetButton = document.getElementsByClassName("reset")[0];
+
+
+Form for buttons======
+<!--<form>
+  <input type = "text" id="betamountvalue" class = "lblbetamount" placeholder="0.00">
+  <div><button class = "btn1">1</button> </div>
+  <div><button class = "btn2">2</button> </div>
+  <div><button class = "btn10">10</button> </div>
+  <div><button class = "btn20">20</button> </div> 
+  <div><button class = "btn100">100</button> </div>
+  <div><button class = "btn50">50</button> </div>
+
+  <div><button style="background-color: darkgreen;">BET</button></div>
+  <div><button style="background-color: red;">CANCEL</button></div>
+  <div><button style="background-color: orangered;">CASH OUT</button></div>
+</form>-->
+==========================================================================================================
+
+
